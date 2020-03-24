@@ -37,6 +37,9 @@ rc-update add networking
 # APK REPOS SetUp
 setup-apkrepos -r 
 
+#enable all repos
+sed 's/#/ /g' /et c/apk/repositories
+
 # APK UPDATE and UPGRADE
 apk update && apk upgrade
 
