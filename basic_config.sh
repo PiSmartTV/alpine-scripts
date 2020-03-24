@@ -1,7 +1,7 @@
 #!/bin/sh
 #from https://wiki.alpinelinux.org/wiki/Alpine_setup_scripts
 
-set -xe
+#set -xe
 
 
 
@@ -27,6 +27,8 @@ mv net_conf /etc/network/interfaces
 #init netowrking
 #/etc/init.d/networking --quiet start &
 /etc/init.d/networking start &
+#add/enable service at boot time
+rc-update add networking
 
 # DNS SetUp
 #setup-dns [-d example.com -n "8.8.8.8 [...]"]
@@ -53,3 +55,6 @@ apk add openssh
 
 #DISK SETUP
 echo "y" | setup-disk -q -m sys /dev/sda
+
+
+
