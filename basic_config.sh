@@ -62,3 +62,5 @@ echo "y" | setup-disk -q -m sys /dev/sda
 
 
 
+
+
