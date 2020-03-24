@@ -15,14 +15,15 @@ setup-keymap it it
 setup-hostname -n $TARGET_HOSTNAME
 
 # ETHERNET Configuration
-cat <<EOF > /etc/network/interfaces
+cat <<EOF > net_conf 
 auto lo
 iface lo inet loopback
+
 auto eth0
 iface eth0 inet dhcp
-    hostname pitv
 EOF
 
+mv net_conf /etc/network/interfaces
 #init netowrking
 #/etc/init.d/networking --quiet start &
 /etc/init.d/networking start &
