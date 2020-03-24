@@ -14,7 +14,7 @@ setup-keymap it it
 # SETUP HOSTNAME
 setup-hostname -n $TARGET_HOSTNAME
 
-# ETHERNET Configuration
+#### ETHERNET Configuration ######
 cat <<EOF > net_conf 
 auto lo
 iface lo inet loopback
@@ -22,7 +22,8 @@ iface lo inet loopback
 auto eth0
 iface eth0 inet dhcp
 EOF
-
+##################################
+# create interfaces file
 mv net_conf /etc/network/interfaces
 #init netowrking
 #/etc/init.d/networking --quiet start &
